@@ -1,5 +1,15 @@
+$yellow: #f9c869;
+$blue: #66c7cd;
+$red: #f86868;
+
 body {
   margin: 0;
+  font-size: 16px;
+  min-width: 320px;
+  line-height: 1.75;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  position: relative;
 }
 
 @import 'common/greating';

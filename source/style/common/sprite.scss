@@ -16,62 +16,48 @@ $paper-plane-offset-x: 0px;
 $paper-plane-offset-y: 0px;
 $paper-plane-width: 64px;
 $paper-plane-height: 64px;
-$paper-plane-total-width: 256px;
-$paper-plane-total-height: 320px;
+$paper-plane-total-width: 512px;
+$paper-plane-total-height: 960px;
 $paper-plane-image: '../img/sprite.png';
-$paper-plane: (0px, 0px, 0px, 0px, 64px, 64px, 256px, 320px, '../img/sprite.png', 'paper-plane', );
-$puzzle-name: 'puzzle';
-$puzzle-x: 0px;
-$puzzle-y: 64px;
-$puzzle-offset-x: 0px;
-$puzzle-offset-y: -64px;
-$puzzle-width: 256px;
-$puzzle-height: 256px;
-$puzzle-total-width: 256px;
-$puzzle-total-height: 320px;
-$puzzle-image: '../img/sprite.png';
-$puzzle: (0px, 64px, 0px, -64px, 256px, 256px, 256px, 320px, '../img/sprite.png', 'puzzle', );
+$paper-plane: (0px, 0px, 0px, 0px, 64px, 64px, 512px, 960px, '../img/sprite.png', 'paper-plane', );
 $paper-plane-2x-name: 'paper-plane@2x';
 $paper-plane-2x-x: 0px;
-$paper-plane-2x-y: 0px;
+$paper-plane-2x-y: 64px;
 $paper-plane-2x-offset-x: 0px;
-$paper-plane-2x-offset-y: 0px;
+$paper-plane-2x-offset-y: -64px;
 $paper-plane-2x-width: 128px;
 $paper-plane-2x-height: 128px;
 $paper-plane-2x-total-width: 512px;
-$paper-plane-2x-total-height: 640px;
-$paper-plane-2x-image: '../img/sprite@2x.png';
-$paper-plane-2x: (0px, 0px, 0px, 0px, 128px, 128px, 512px, 640px, '../img/sprite@2x.png', 'paper-plane@2x', );
+$paper-plane-2x-total-height: 960px;
+$paper-plane-2x-image: '../img/sprite.png';
+$paper-plane-2x: (0px, 64px, 0px, -64px, 128px, 128px, 512px, 960px, '../img/sprite.png', 'paper-plane@2x', );
+$puzzle-name: 'puzzle';
+$puzzle-x: 0px;
+$puzzle-y: 192px;
+$puzzle-offset-x: 0px;
+$puzzle-offset-y: -192px;
+$puzzle-width: 256px;
+$puzzle-height: 256px;
+$puzzle-total-width: 512px;
+$puzzle-total-height: 960px;
+$puzzle-image: '../img/sprite.png';
+$puzzle: (0px, 192px, 0px, -192px, 256px, 256px, 512px, 960px, '../img/sprite.png', 'puzzle', );
 $puzzle-2x-name: 'puzzle@2x';
 $puzzle-2x-x: 0px;
-$puzzle-2x-y: 128px;
+$puzzle-2x-y: 448px;
 $puzzle-2x-offset-x: 0px;
-$puzzle-2x-offset-y: -128px;
+$puzzle-2x-offset-y: -448px;
 $puzzle-2x-width: 512px;
 $puzzle-2x-height: 512px;
 $puzzle-2x-total-width: 512px;
-$puzzle-2x-total-height: 640px;
-$puzzle-2x-image: '../img/sprite@2x.png';
-$puzzle-2x: (0px, 128px, 0px, -128px, 512px, 512px, 512px, 640px, '../img/sprite@2x.png', 'puzzle@2x', );
-$spritesheet-width: 256px;
-$spritesheet-height: 320px;
+$puzzle-2x-total-height: 960px;
+$puzzle-2x-image: '../img/sprite.png';
+$puzzle-2x: (0px, 448px, 0px, -448px, 512px, 512px, 512px, 960px, '../img/sprite.png', 'puzzle@2x', );
+$spritesheet-width: 512px;
+$spritesheet-height: 960px;
 $spritesheet-image: '../img/sprite.png';
-$spritesheet-sprites: ($paper-plane, $puzzle, );
-$spritesheet: (256px, 320px, '../img/sprite.png', $spritesheet-sprites, );
-$retina-spritesheet-width: 512px;
-$retina-spritesheet-height: 640px;
-$retina-spritesheet-image: '../img/sprite@2x.png';
-$retina-spritesheet-sprites: ($paper-plane-2x, $puzzle-2x, );
-$retina-spritesheet: (512px, 640px, '../img/sprite@2x.png', $retina-spritesheet-sprites, );
-
-// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
-//
-// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
-$paper-plane-group-name: 'paper-plane';
-$paper-plane-group: ('paper-plane', $paper-plane, $paper-plane-2x, );
-$puzzle-group-name: 'puzzle';
-$puzzle-group: ('puzzle', $puzzle, $puzzle-2x, );
-$retina-groups: ($paper-plane-group, $puzzle-group, );
+$spritesheet-sprites: ($paper-plane, $paper-plane-2x, $puzzle, $puzzle-2x, );
+$spritesheet: (512px, 960px, '../img/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -123,34 +109,6 @@ $retina-groups: ($paper-plane-group, $puzzle-group, );
   @include sprite-height($sprite);
 }
 
-// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
-//   It should be used with a "retina group" variable.
-//
-// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
-//
-// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
-//
-// .icon-home {
-//   @include retina-sprite($icon-home-group);
-// }
-@mixin sprite-background-size($sprite) {
-  $sprite-total-width: nth($sprite, 7);
-  $sprite-total-height: nth($sprite, 8);
-  background-size: $sprite-total-width $sprite-total-height;
-}
-
-@mixin retina-sprite($retina-group) {
-  $normal-sprite: nth($retina-group, 2);
-  $retina-sprite: nth($retina-group, 3);
-  @include sprite($normal-sprite);
-
-  @media (-webkit-min-device-pixel-ratio: 2),
-         (min-resolution: 192dpi) {
-    @include sprite-image($retina-sprite);
-    @include sprite-background-size($normal-sprite);
-  }
-}
-
 // The `sprites` mixin generates identical output to the CSS template
 //   but can be overridden inside of SCSS
 //
@@ -160,19 +118,6 @@ $retina-groups: ($paper-plane-group, $puzzle-group, );
     $sprite-name: nth($sprite, 10);
     .#{$sprite-name} {
       @include sprite($sprite);
-    }
-  }
-}
-
-// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
-//   This yields the same output as CSS retina template but can be overridden in SCSS
-//
-// @include retina-sprites($retina-groups);
-@mixin retina-sprites($retina-groups) {
-  @each $retina-group in $retina-groups {
-    $sprite-name: nth($retina-group, 1);
-    .#{$sprite-name} {
-      @include retina-sprite($retina-group);
     }
   }
 }
