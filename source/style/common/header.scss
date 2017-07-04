@@ -1,0 +1,76 @@
+.header{
+	min-height: 700px;
+	height: 100vh;
+	background-color: #b27884;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	&-top-line{
+		padding-top: 35px;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+}
+.logo-img{
+	width: 125px;
+	height: auto;
+	margin-left: 45px;
+}
+.phone{
+	display: flex;
+	position: absolute;
+	right: 85px;
+	top: 50px;
+	&-icon{
+		margin: 8px 6px 0 0;
+		font-size: 22px;
+	}
+	&-number{
+		margin: 0px;
+		font-size: 22px;
+		font-family: 'Fira Sans', sans-serif;
+		white-space: nowrap;
+	}
+}
+.menu-link{
+	position: absolute;
+	right: 15px;
+	top: 44px;
+	display: block;
+	height: 50px;
+	width: 50px;
+	span, span:before, span:after{
+		display: block;
+		height: 2px;
+		width: 26px;
+		background-color: #000;
+		position: absolute;
+		left: 50%;
+		margin-left: -13px;
+		top: 50%;
+		margin-top: -1px;
+		border-radius: 5px;
+	}
+	span:before{
+		content:'';
+		transition: all 0.2s;
+		margin-top: -6px;
+	}
+	span:after{
+		content: '';
+		transition: all 0.2s;
+		margin-top: 4px;
+	}
+	&-active span{
+		background-color: transparent;
+		&:before{
+			transform: rotate(45deg);
+			margin-top: 0;
+		}
+		&:after{
+			transform: rotate(-45deg);
+			margin-top: 0;
+		}
+	}
+}
