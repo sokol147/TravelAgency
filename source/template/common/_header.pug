@@ -1,3 +1,5 @@
+- var menu = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто', 'Круизы', 'Услуги', 'Визы', 'Контакты']
+
 header.header(style='background-image: url(assets/img/bgbig.jpg)')
 	div.header-top-line
 		a.logo(href='#')
@@ -7,3 +9,20 @@ header.header(style='background-image: url(assets/img/bgbig.jpg)')
 			p.phone-number +375 (29) 123-45-67
 		a.menu-link(href='#')
 			span
+	div.menu
+		ul.menu-list
+			each item in menu
+				li.menu-list-item
+					a.menu-list-item--link(href='#')= item
+	div.header-info
+		div.main-info
+			div.main-info-composition
+				div.welcome
+					p
+						span Добро пожаловать в лучшее
+					h1.h1 туристическое агентство
+					i.fa.fa-star
+					strong в минске
+					i.fa.fa-star
+
+
