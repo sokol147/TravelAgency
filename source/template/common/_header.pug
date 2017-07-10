@@ -1,4 +1,5 @@
 - var menu = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто', 'Круизы', 'Услуги', 'Визы', 'Контакты']
+- var social = ['facebook', 'instagram','vk']
 
 header.header(style='background-image: url(assets/img/bgbig.jpg)')
 	div.header-top-line
@@ -29,5 +30,23 @@ header.header(style='background-image: url(assets/img/bgbig.jpg)')
 								i.fa.fa-star.right-star
 							p.big-descr Nefco - это туристическое агентство безнес классаю Агенты салона дарят клиентам уверенность в себе и индивидуальные путевкию Здесь представленны все самые востребованные курорты в туристическом бизнесе.
 							a.btn.btn-main(href='#') о агентстве
+	div.header-social
+		ul.header-social-list
+			each item in social
+				li.header-social-list-item
+					a.header-social-list-item-link(href='#')
+						i.fa(class='fa-' + item)
+	div.header-address
+		div.container
+			div.row
+				div.col-md-4
+					i.fa.fa-location-arrow
+					p г. Минск, ул. Краснобеловая, 22 к 4
+				div.col-md-4.col-md-4-phone
+					i.fa.fa-mobile
+					p.header-phone +375 (29) 123-45-67
+				div.col-md-4.col-md-4-time
+					i.fa.fa-clock-o
+					p Время работы: ежедневно: 10:00 - 22:00
 
 
