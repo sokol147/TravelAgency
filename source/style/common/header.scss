@@ -34,7 +34,7 @@
 	}
 }
 .menu-link{
-	position: fixed;
+	position: absolute;
 	right: 0;
 	top: 44px;
 	display: block;
@@ -233,4 +233,44 @@
 }
 .header-phone{
 	font-family: 'Fira sans', sans-serif;
+}
+@media only screen and (max-width: 1200px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 60px;
+	}
+	.header-address{
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 992px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 46px;
+	}
+}
+@media only screen and (max-width: 768px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 46px;
+	}
+	.header-address .col-md-4-phone{
+		justify-content: flex-start;
+	}
+	.header-info .btn-main{
+		padding: 12px 36px;
+	}
+}
+@media only screen and (max-width: 480px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 28px;
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	.main-info-composition .welcome-text span{
+		font-size: 10px;
+	}
+	.header-info .city{
+		font-size: 14px;
+	}
+	.header-info .big-descr{
+		font-size: 14px;
+	}
 }

@@ -5,7 +5,7 @@ header.header(style='background-image: url(assets/img/bgbig.jpg)')
 	div.header-top-line
 		a.logo(href='#')
 			img.logo-img(src='assets/img/logo.png' alt='logo')
-		div.phone 
+		div.phone.hidden-xs
 			i.fa.fa-mobile.phone-icon
 			p.phone-number +375 (29) 123-45-67
 		a.menu-link(href='#')
@@ -19,7 +19,7 @@ header.header(style='background-image: url(assets/img/bgbig.jpg)')
 		div.main-info
 			div.container
 				div.row
-					div.col-sm-7
+					div.col-sm-7.col-xs-10
 						div.main-info-composition
 							div.welcome
 								p.welcome-text
@@ -39,13 +39,13 @@ header.header(style='background-image: url(assets/img/bgbig.jpg)')
 	div.header-address
 		div.container
 			div.row
-				div.col-md-4
+				div.col-md-4.col-sm-6
 					i.fa.fa-location-arrow
 					p г. Минск, ул. Краснобеловая, 22 к 4
-				div.col-md-4.col-md-4-phone
+				div.col-md-4.col-sm-6.col-md-4-phone
 					i.fa.fa-mobile
 					p.header-phone +375 (29) 123-45-67
-				div.col-md-4.col-md-4-time
+				div.col-md-4.hidden-sm.hidden-xs.col-md-4-time
 					i.fa.fa-clock-o
 					p Время работы: ежедневно: 10:00 - 22:00
 
