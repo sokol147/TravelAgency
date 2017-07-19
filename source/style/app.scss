@@ -28,17 +28,21 @@ body {
 	text-align: center;
 	position: relative;
 	transition: background-color .1s ease;
-	&:hover{
-		background-color: lighten($yellow, 5%);
-		color: #fff;
-	}
-	&:active{
-		background-color: darken($yellow, 5%);
-		color: #fff;
-	}
 	&-main{
 		background-color: $yellow;
 		color: #fff;
+		&:hover{
+		background-color: lighten($yellow, 5%);
+		color: #fff;
+		}
+		&:active{
+		background-color: darken($yellow, 5%);
+		color: #fff;
+		}
+	}
+	&-carousel{
+		background-color: #fff;
+		color: #000;
 	}
 }
 @import 'common/greating';
