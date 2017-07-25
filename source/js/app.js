@@ -28,6 +28,8 @@ $(document).ready(function(){
 	$('.services-carousel').owlCarousel({
 		nav: true,
 		smartSpeed: 700,
+		dots: false,
+		nav: true,
 		navText: ['<i class="fa fa-angle-double-left"></i>', '<i class="fa fa-angle-double-right"></i>'],
 		responsiveClass: true,
 		responsive: {
@@ -42,6 +44,7 @@ $(document).ready(function(){
 			}
 		}
 	});
+
 	function serviceCarousel(){
 		$('.services-carousel-item').each(function(){
 			var $serviceItem = $(this),
@@ -55,4 +58,5 @@ $(document).ready(function(){
 		var ths = $(this);
 		ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 	});
+
 });

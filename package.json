@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "equal-height": "^1.1.0",
+    "fotorama": "^4.6.4",
     "jquery": "~3.2.1",
     "normalize.css": "~7.0.0",
     "owl.carousel": "^2.2.0"

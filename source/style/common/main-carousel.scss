@@ -26,7 +26,7 @@ $colors: $blue, $red, $yellow;
 		}
 	}
 	&-content{
-		padding: 35px 10%;
+		padding: 30px 10%;
 		text-align: center;
 		.h3{
 			font-weight: 700;
@@ -44,9 +44,9 @@ $colors: $blue, $red, $yellow;
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 		&-item{
-			padding: 7px;
+			padding: 5px;
 			border-bottom: 1px solid rgba(#000, .12);
 			&:last-child{
 				border-bottom: none;
@@ -83,4 +83,30 @@ $colors: $blue, $red, $yellow;
 .btn-carousel{
 	background-color: #fff;
 	color: #444;
+}
+.services .owl-nav{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	.owl-prev{
+		left:0;
+	}
+	.owl-next{
+		right: 0;
+	}
+	div{
+		position: absolute;
+		top:0;
+		width: 64px;
+		height: 64px;
+		font-size: 26px;
+		line-height: 64px;
+		background-color: #fff;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 1200px){
+	.services-carousel-item{
+		flex-direction: column;
+	}
 }

@@ -1,27 +1,27 @@
-- var menu = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто', 'Круизы', 'Услуги', 'Визы', 'Контакты']
+- var menu = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто', 'Круизы', 'Услуги', 'Визы']
 - var social = ['facebook', 'instagram','vk']
 
 header.header(style='background-image: url(assets/img/bgbig.jpg)')
-	div.header-top-line
+	.header-top-line
 		a.logo(href='#')
 			img.logo-img(src='assets/img/logo.png' alt='logo')
-		div.phone.hidden-xs
+		.phone.hidden-xs
 			i.fa.fa-mobile.phone-icon
 			p.phone-number +375 (29) 123-45-67
 		a.menu-link(href='#')
 			span
-	div.menu
+	.menu
 		ul.menu-list
 			each item in menu
 				li.menu-list-item
 					a.menu-list-item--link(href='#')= item
-	div.header-info
-		div.main-info
-			div.container
-				div.row
-					div.col-sm-7.col-xs-10
-						div.main-info-composition
-							div.welcome
+	.header-info
+		.main-info
+			.container
+				.row
+					.col-sm-7.col-xs-10
+						.main-info-composition
+							.welcome
 								p.welcome-text
 									span Добро пожаловать в лучшее
 								h1.h1.welcome-text-h1 тур агентство
@@ -30,22 +30,22 @@ header.header(style='background-image: url(assets/img/bgbig.jpg)')
 								i.fa.fa-star.right-star
 							p.big-descr Nefco - это туристическое агентство безнес классаю Агенты салона дарят клиентам уверенность в себе и индивидуальные путевкию Здесь представленны все самые востребованные курорты в туристическом бизнесе.
 							a.btn.btn-main(href='#') о агентстве
-	div.header-social
+	.header-social
 		ul.header-social-list
 			each item in social
 				li.header-social-list-item
 					a.header-social-list-item-link(href='#')
 						i.fa(class='fa-' + item)
-	div.header-address
-		div.container
-			div.row
-				div.col-md-4.col-sm-6
+	.header-address
+		.container
+			.row
+				.col-md-4.col-sm-6
 					i.fa.fa-location-arrow
 					p г. Минск, ул. Краснобеловая, 22 к 4
-				div.col-md-4.col-sm-6.col-md-4-phone
+				.col-md-4.col-sm-6.col-md-4-phone
 					i.fa.fa-mobile
 					p.header-phone +375 (29) 123-45-67
-				div.col-md-4.hidden-sm.hidden-xs.col-md-4-time
+				.col-md-4.hidden-sm.hidden-xs.col-md-4-time
 					i.fa.fa-clock-o
 					p Время работы: ежедневно: 10:00 - 22:00
 
