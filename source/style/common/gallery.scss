@@ -4,10 +4,12 @@ $overlay: #3d3c3c;
 }
 .gallery{
 	padding: 5% 0;
+	position: relative;
 	background-size: cover;
 	background-repeat: no-repeat;
 	p{
-		margin: 30px 0;
+		margin: 26px 0;
+		font-size: 16px;
 	}
 	.h2{
 		font-size: 30px;
@@ -34,9 +36,26 @@ $overlay: #3d3c3c;
 				border-color: darken($blue, 10%);
 			}
 		}
+		&__nav:after, &__stage:after, &__nav:before, &__stage:after{
+			display: none;
+		}
+		&__stage{
+			.fotorama__arr--prev:before, .fotorama__arr--next:before{
+				font-size: 32px;
+				font-family: 'FontAwesome';
+			}
+			.fotorama__arr--next:before{
+				content:'\f105';
+			}
+			.fotorama__arr--prev:before{
+				content:'\f104';
+				position: absolute;
+				right: 0;
+			}
+		}
 	}
 }
-.section-overley:before{
+.gallery.section-overley:before{
 	content:'';
 	position: absolute;
 	top: 0;
@@ -45,4 +64,16 @@ $overlay: #3d3c3c;
 	height: 100%;
 	background-color: $overlay;
 	opacity: .8;
+}
+@media only screen and (max-width: 1200px){
+	.gallery{
+		padding: 8% 0;
+	}
+}
+@media only screen and (max-width: 480px){
+	.gallery{
+		.fotorama__nav-wrap{
+			display: none;
+		}
+	}
 }
