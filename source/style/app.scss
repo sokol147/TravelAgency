@@ -41,7 +41,11 @@ body {
 		}
 	}
 }
+.inverse{
+	color: #fff;
+}
 @import 'common/greating';
 @import 'common/header';
 @import 'common/main-carousel';
 @import 'common/gallery';
+@import 'common/call-back';
