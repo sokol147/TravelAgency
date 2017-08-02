@@ -33,7 +33,9 @@
 	.call-back-left{
 		margin-top: 0;
 	}
-	input, select, textarea{
+	input, select, textarea,
+	.selectize-control .selectize-input,
+	.selectize-control.single .selectize-input.inputac-tive{
 		background-color: transparent;
 		border: 1px solid rgba(#000, .1);
 		border-bottom: 2px solid rgba(#000, .1);
@@ -51,6 +53,43 @@
 			color: #333;
 		}
 	}
+	.dropdown-active:before{
+		background-color: transparent;
+	}
+	.selectize-control .selectize-input{
+		box-shadow: none;
+		overflow: inherit;
+		line-height: inherit;
+		text-align: left;
+		background-color: transparent;
+		input{
+			font-size: 15px;
+			border: none;
+		}
+	}
+	.selectize-dropdown{
+		font-size: 16px;
+		&-content{
+			.option{
+				padding: 10px 22px;
+				&.active{
+					background-color: lighten($yellow, 25);
+				}
+			}
+		}
+	}
+	.selectize-dropdown-content{
+		background-color: #fff;
+	}
+	.selectize-input.dropdown-active{
+		color: #fff;
+		background-color: transparent !important;
+	}
+	.call-back-select,
+	.selectize-control .selectize-input,
+	.selectize-control.single .selectize-input.inputac-tive{
+		height: 47px;
+	}
 }
 .call-back-success{
 	display: none;
@@ -64,11 +103,13 @@
 	z-index: 10;
 	span{
 		margin: auto;
+		font-size: 30px;
 	}
 	& ~ *{
 		transition: all .5s ease;
 	}
 	&.active{
+		display: flex;
 		& ~ *{
 			opacity: .5;
 			filter:blur(10px);
@@ -79,5 +120,20 @@
 	img{
 		width: 100px;
 		height: auto;
+	}
+}
+@media only screen and (max-width: 1200px){
+	.call-back{
+		background-size: cover;
+	}
+}
+@media only screen and (max-width: 992px){
+	.call-back{
+		&:before{
+			width: 100%;
+		}
+		&--form{
+			padding: 10% 0;
+		}
 	}
 }

@@ -64,6 +64,17 @@ $(document).ready(function(){
 		ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
 	});
 
+	$('.btn-call-back').on('click', function(e){
+		e.preventDefault();
+		$('.call-back-success').addClass('active');
+		setTimeout(function(){
+			$('.call-back-success').removeClass('active');
+		},5000);
+		setTimeout(function(){
+			$('.call-back--form input[type="text"]').val('');
+		},4000);
+	});
+
 	$('.call-back-select').selectize({
 		
 	});
