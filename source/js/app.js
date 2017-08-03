@@ -64,6 +64,11 @@ $(document).ready(function(){
 		ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
 	});
 
+	$('.review .h2').each(function(){
+		var ths = $(this);
+		ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
+	});
+
 	$('.btn-call-back').on('click', function(e){
 		e.preventDefault();
 		$('.call-back-success').addClass('active');
@@ -76,7 +81,13 @@ $(document).ready(function(){
 	});
 
 	$('.call-back-select').selectize({
-		
+	});
+
+	$('.carousel-reviews').owlCarousel({
+		items: 1,
+		loop: true,
+		smartSpeed: 700,
+		dots: true
 	});
 
 });
