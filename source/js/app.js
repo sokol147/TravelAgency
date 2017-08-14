@@ -25,6 +25,10 @@ $(document).ready(function(){
 		}, 100);
 	});
 
+/*	$('.js-compare-products').owlCarousel({
+		items: 2
+	});*/
+
 	$('.services-carousel').owlCarousel({
 		nav: true,
 		smartSpeed: 700,

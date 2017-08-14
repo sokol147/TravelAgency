@@ -1,0 +1,23 @@
+.compare-table{
+	padding: 5% 0;
+}
+.compare-content{
+	display: flex;
+	.compare-info{
+		width: 20%;
+	}
+	.compare-products{
+		width: 80%;
+	}
+}
+.compare-top{
+	height: 250px;
+}
+.js-compare-products{
+	display: flex;
+	overflow-x: scroll;
+}
+.test-pug{
+	padding: 5%;
+	background-color: lightgrey;
+}
