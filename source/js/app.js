@@ -19,17 +19,13 @@ $(document).ready(function(){
 		$('.menu-link').removeClass('menu-link-active');
 	});
 
-	$('.services-carousel').on('initialized.owl.carousel', function(){
+	$('.services-carousel-new').on('initialized.owl.carousel', function(){
 		setTimeout(function(){
 			serviceCarousel()
 		}, 100);
 	});
 
-/*	$('.js-compare-products').owlCarousel({
-		items: 2
-	});*/
-
-	$('.services-carousel').owlCarousel({
+	$('.services-carousel-new').owlCarousel({
 		nav: true,
 		smartSpeed: 700,
 		dots: false,
@@ -50,15 +46,15 @@ $(document).ready(function(){
 	});
 
 	function serviceCarousel(){
-		$('.services-carousel-item').each(function(){
+		$('.services-carousel-new-item').each(function(){
 			var $serviceItem = $(this),
-					$serviceItemHeight = $serviceItem.find('.services-carousel-content').outerHeight();
-					$serviceItem.find('.services-carousel-image').css('min-height', $serviceItemHeight);
+					$serviceItemHeight = $serviceItem.find('.services-carousel-new-content').outerHeight();
+					$serviceItem.find('.services-carousel-new-image').css('min-height', $serviceItemHeight);
 		});
 	};
 	serviceCarousel();
 
-	$('.services-carousel-content .h3').each(function(){
+	$('.services-carousel-new-content .h3').each(function(){
 		var ths = $(this);
 		ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 	});
