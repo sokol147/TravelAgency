@@ -87,7 +87,8 @@ $(document).ready(function(){
 		items: 1,
 		loop: true,
 		smartSpeed: 700,
-		dots: true
+		dots: true,
+		autoplay: true
 	});
 
 	$('.carousel-partners').owlCarousel({
