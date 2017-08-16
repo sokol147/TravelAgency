@@ -2,3 +2,56 @@
 	padding: 5%;
 	background-color: lightgrey;
 }
+.prostore-carousel{
+	background-color: #ecd6ae;
+}
+.prostore-carousel-container{
+	width: 722px;
+	margin: 0 auto;
+}
+.prostore-carousel-shop{
+	position: relative;
+	.owl-nav{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		> div{
+			width: 45px;
+			height: 45px;
+			font-size: 26px;
+			text-align: center;
+			line-height: 45px;
+			background-color: rgba(233,217,194,0.92);
+			color: #fff;
+			position: absolute;
+		}
+		.owl-prev{
+			left: 0;
+			top: 102px;
+		}
+		.owl-next{
+			right: 0;
+			top: 102px;
+		}
+	}
+	.owl-dots{
+		position: absolute;
+		bottom: 7px;
+		width: 96px;
+		left: 50%;
+		margin-left: -48px;
+		text-align: center;
+		background-color: rgba(255,255,255,0.6);
+		.owl-dot{
+			width: 9px;
+			height: 9px;
+			background-color: #fff;
+			border-radius: 50%;
+			display: inline-block;
+			margin: 0 5px;
+			&.active{
+				background-color: #09428f;
+			}
+		}
+	}
+}

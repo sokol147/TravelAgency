@@ -26,7 +26,6 @@ $(document).ready(function(){
 	});
 
 	$('.services-carousel-new').owlCarousel({
-		nav: true,
 		smartSpeed: 700,
 		dots: false,
 		nav: true,
@@ -43,6 +42,17 @@ $(document).ready(function(){
 				items: 3
 			}
 		}
+	});
+
+	$('.prostore-carousel-shop').owlCarousel({
+		nav: true,
+		autoplay: true,
+		autoplayTimeout: 10000,
+		smartSpeed: 700,
+		dots: true,
+		navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		items: 1,
+		loop: true
 	});
 
 	function serviceCarousel(){
