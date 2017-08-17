@@ -39,11 +39,7 @@ header.header(style='background-image: url(assets/img/bgbig.jpg)')
 							p.big-descr #{seoText}
 							a.btn.btn-main(href='#') #{headerButton}
 	.header-social
-		ul.header-social-list
-			each item in social
-				li.header-social-list-item
-					a.header-social-list-item-link(href='#')
-						i.fa(class='fa-' + item)
+		+social('header-social-list', ['facebook', 'instagram', 'vk', 'twitter'])
 	.header-address
 		.container
 			.row

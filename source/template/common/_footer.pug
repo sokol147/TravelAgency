@@ -13,11 +13,7 @@ footer.footer
 					img.footer-logo(src='assets/img/logo.png')
 					p.footer-descr #{footerHeader}
 					.footer-social
-						ul.header-social-list
-							each item in social
-								li.header-social-list-item
-									a.header-social-list-item-link(href='#')
-										i.fa(class='fa-' + item)
+						+social('header-social-list', ['facebook', 'instagram', 'vk'])
 			.col-lg-3.col-xs-12.col-sm-4
 				.footer-column
 					nav.footer-menu
