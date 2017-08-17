@@ -1,5 +1,9 @@
 - var social = ['facebook', 'instagram','vk']
 - var menu = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто']
+- var footerHeader = 'Лакшери туристическое агентство Минска'
+- var footerAddress = 'г. Минск, ул. Краснобеловая, 22 к 4 ст.м Академия наук'
+- var workTime = 'Время работы: ежедневно: 10:00 - 22:00'
+- var phoneNumber = '+375 (29) 123-45-67'
 
 footer.footer
 	.container
@@ -7,7 +11,7 @@ footer.footer
 			.col-lg-2.col-xs-12.col-sm-4
 				.footer-column.footer-column-social
 					img.footer-logo(src='assets/img/logo.png')
-					p.footer-descr Лакшери туристическое агентство Минска
+					p.footer-descr #{footerHeader}
 					.footer-social
 						ul.header-social-list
 							each item in social
@@ -23,9 +27,9 @@ footer.footer
 									a(hfer='#').footer-menu-list-item--link=item
 			.col-lg-3.col-xs-12.col-sm-4
 				.footer-column.footer-column-address
-					p.footer-addres г. Минск, ул. Краснобеловая, 22 к 4 ст.м Академия наук
-					p.footer-time Время работы: ежедневно: 10:00 - 22:00
-					p.footer-phone +375 (29) 123-45-67
+					p.footer-addres #{footerAddress}
+					p.footer-time #{workTime}
+					p.footer-phone #{phoneNumber}
 			.col-lg-4.col-xs-12.col-sm-12
 				.footer-column
 					.footer-map
