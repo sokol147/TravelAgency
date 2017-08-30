@@ -6,6 +6,8 @@
   }, 1000);
 })();*/
 
+
+
 $(document).ready(function(){
 
 	$('.menu-link').on('click', function(e){
@@ -44,6 +46,19 @@ $(document).ready(function(){
 			}
 		}
 	});
+
+
+	$('.prostore-carousel-shop').owlCarousel({
+		nav: true,
+		autoplay: true,
+		autoplayTimeout: 10000,
+		smartSpeed: 700,
+		dots: true,
+		navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		items: 1,
+		loop: true
+	});
+
 
 	function serviceCarousel(){
 		$('.services-carousel-new-item').each(function(){
