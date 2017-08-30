@@ -1,73 +1,88 @@
-@mixin tooltip($tooltipPos, $color, $backgroundColor, $borderRadius, $transition, $offset, $triangleWidth, $triangleHeight, $direction) {
-    position: relative;
-    cursor: pointer;
-    &:hover {
-        &:before,
-        &:after{
-          opacity: 1;
-        }
-    }
-    &:before,
-    &:after{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+@mixin tooltipFull($tooltipPosition, $color, $backgroundColor, $borderRadius, $transition, $offset, $triangleWidth, $triangleHeight){
+	position: relative;
+	cursor: pointer;
+	&:hover{
+		&:before,
+		&:after{
+			opacity: 1;
+		}
+	}
+	&:before,
+	&:after{
+		position: absolute;
+		opacity: 0;
+		transition: all $transition;
+	}
+	&:before{
+		content: attr(data-tooltip);
 
-        opacity: 0;
+		color: $color;
+		background-color: $backgroundColor;
 
-        transition: opacity $transition;
-    }
-    &:before {
-        content: attr(data-tooltip);
+		padding: 5px 10px;
+		border-radius: $borderRadius;
 
-        color: $color;
-        background-color: $backgroundColor;
-				
-				@if $tooltipPos=='t'{
-					bottom: $offset;
-				}
-				@if $tooltipPos=='b'{
-					top: $offset;
-				}
-				@if $tooltipPos=='r'{
-					left: $offset;
-				}
-				@if $tooltipPos=='l'{
-					right: $offset;
-				}
-
-        padding: 5px 10px;
-        border-radius: $borderRadius;
-
-        white-space: nowrap;
-        text-transform: lowercase;
-    }
-    &:after{
-    	content: '';
-    	width: 0;
-    	height: 0;
-			opacity: 0;
-    	position: absolute;
-    	border-style: solid;
-    	transition: opacity $transition;
-    	@if $direction=='t'{
-    		border-width: 0 $triangleWidth / 2 + px $triangleHeight + px $triangleWidth / 2 + px;
-    		border-color: transparent transparent $backgroundColor transparent;
-    		top: $offset - 9px;
-    	}
-    	@if $direction=='b'{
-    		border-width: $triangleHeight + px $triangleWidth / 2 + px 0 $triangleWidth / 2 + px;
-				border-color: $backgroundColor transparent transparent transparent;
-				bottom: $offset - 9px;
-    	}
-    	@if $direction=='l'{
-    		border-width: $triangleHeight / 2 + px $triangleWidth + px $triangleHeight / 2 + px 0;
-        border-color: transparent $backgroundColor transparent transparent;
-        left: $offset - 9px;
-    	}
-    }
+		white-space: nowrap;
+	}
+	&:after{
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+	}
+	@if $tooltipPosition=='t'{
+		&:before{
+			bottom: $offset;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&:after{
+			border-width: $triangleHeight + px $triangleWidth + px 0 $triangleWidth + px;
+			border-color: $backgroundColor transparent transparent transparent;
+			bottom: $offset - 9px;
+		}
+	}
+	@if $tooltipPosition=='b'{
+		&:before{
+			top: $offset;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&:after{
+			border-width: 0 $triangleWidth + px $triangleHeight + px $triangleWidth + px;
+			border-color: transparent transparent $backgroundColor transparent;
+			top: $offset - 9px;
+		}
+	}
+	@if $tooltipPosition=='l'{
+		&:before{
+			top: 50%;
+			transform: translateY(-50%);
+			right: $offset + 50px;
+		}
+		&:after{
+			border-width: $triangleHeight + px 0 $triangleHeight + px $triangleWidth + px;
+			border-color: transparent transparent transparent $backgroundColor;
+			right: $offset + 41px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	@if $tooltipPosition=='r'{
+		&:before{
+			top: 50%;
+			transform: translateY(-50%);
+			left: $offset + 50px;
+		}
+		&:after{
+			border-width: $triangleHeight + px $triangleWidth + px $triangleHeight + px 0;
+			border-color: transparent $backgroundColor transparent transparent;
+			left: $offset + 41px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
 }
-
 
 
 
@@ -85,7 +100,7 @@
 .menu-info{
 	display: inline-block;
 	margin: 0 auto;
-	@include tooltip(t, red, black, 3px, .5s, 35px, 9, 9 , b);
+	@include tooltipFull(l, white, black, 3px, .5s, 35px, 9, 9);
 }
 
 .compare-table{
