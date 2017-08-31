@@ -1,11 +1,28 @@
 - var item = ["One", "Two", "Three", "Four"]
 - var pageTitle = 'Сравнение товаров'
+- var menu = ['Shop', 'About us', 'Our work']
 
+section.parallax-wrapper
+	.scene
+		.parallax.clouds(data-offset='90')
+		.parallax.trees(data-offset='30')
+		.parallax.grass(data-offset='20')
+		.parallax.buildings(data-offset='50')
+		.ground
+		.sun
+	nav.nav
+		ul.navigation
+			each item in menu
+				li.navigation__item
+					a.navigation__link #{item}
 
+	a.btn-down
+		i.fa.fa-angle-double-down
 
-header.compare-header
-.section
-	a.menu-info(href='' data-tooltip='enter E-mail') hover me
+section.content
+
+//- .section
+//- 	a.menu-info(href='' data-tooltip='enter E-mail') hover me
 
 
 

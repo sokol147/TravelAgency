@@ -126,3 +126,104 @@
 	padding: 5%;
 	background-color: lightgrey;
 }
+
+
+.parallax-wrapper{
+	background-color: #84dbd7;
+	overflow: hidden;
+	height: 100vh;
+	position: relative;
+}
+.scene{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	right: 0;
+	border-bottom: 100px solid #342a2a;
+	height: 800px;
+}
+.scene > div{
+	position: absolute;
+	bottom: 0;
+}
+.ground{
+	width: 100%;
+	height: 40px;
+	background-color: #1d1818;
+	z-index: 10;
+}
+.sun{
+	background: url(/assets/img/sun-small.png) no-repeat center;
+	height: 50px;
+	width: 50px;
+	top: 75%;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: sun-walk 10s infinite linear;
+}
+@keyframes sun-walk{
+	0% {
+		transform: rotate(0deg) translate(-450px);
+	}
+	100% {
+		transform: rotate(360deg) translate(-450px);
+	}
+}
+.scene .clouds{
+	width: 895px;
+	left: 50%;
+	margin-left: -450px;
+	height: 253px;
+	bottom: 300px;
+	background: url(http://i.imgur.com/WYfbo0O.png) no-repeat center;
+	z-index: 4;
+}
+.scene .trees{
+	width: 908px;
+	height: 174px;
+	background: url(http://i.imgur.com/4JOfJhg.png) no-repeat center;
+	left: 50%;
+	bottom: 20px;
+	margin-left: -454px;
+	z-index: 2;
+}
+.scene .grass{
+	width: 964px;
+	height: 37px;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -482px;
+	background: url(http://i.imgur.com/h0aXbZr.png) no-repeat center;
+	z-index: 2;
+}
+.scene .buildings{
+	width: 763px;
+	height: 303px;
+	left: 50%;
+	margin-left: -381px;
+	background: url(http://i.imgur.com/5LmAigM.png) no-repeat center;
+	z-index: 1;
+}
+.content{
+	height: 100vh;
+}
+.btn-down{
+	position: absolute;
+	animation: shake-btn-down 5s infinite;
+	bottom: 35px;
+	left: 50%;
+	transform: translateX(-50%);
+	.fa-angle-double-down{
+		font-size: 35px;
+		color: #fff;
+		cursor: pointer;
+	}
+}
+@keyframes shake-btn-down{
+	0%{bottom: 40px;}
+	25%{bottom: 30px;}
+	50%{bottom: 40px;}
+	75%{bottom: 30px;}
+	100%{bottom: 40px;}
+}
