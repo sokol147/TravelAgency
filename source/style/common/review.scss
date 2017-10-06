@@ -1,0 +1,100 @@
+.review{
+	position: relative;
+	padding: 5% 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	.h2{
+		font-size: 30px;
+		font-weight: 800;
+		color: $yellow;
+		span{
+			color: #fff;
+		}
+	}
+	.quotes{
+		position: absolute;
+		width: 100%;
+		&:after, &:before{
+			content: ',,';
+			position: absolute;
+			font-size: 56px;
+			color: $yellow;
+			font-family: 'Times New Roman' , serif;
+			font-weight: bold;
+			line-height: 0;
+			display: block;
+		}
+		&:before{
+			transform: rotate(180deg);
+			left: -40px;
+			top: 200px;
+		}
+		&:after{
+			right: -10px;
+			top: 165px;
+		}
+	}
+	.owl-dots{
+		width: 100%;
+		text-align: center;
+		margin-top: 30px;
+		.owl-dot{
+			height: 8px;
+			width: 8px;
+			background-color: #fff;
+			border-radius: 50%;
+			display: inline-block;
+			margin: 0 4px;
+			transition: all .5s ease;
+		}
+		.owl-dot.active{
+			background-color: $yellow;
+			transform: scale(1.3);
+		}
+	}
+}
+.section-overlay:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #3d3c3c;
+	opacity: .8;
+}
+.carousel-reviews{
+	text-align: center;
+	position: relative;
+}
+.carousel-reviews-item{
+	margin-top: 40px;
+	.review-header{
+		font-family: 'Times New Roman', serif;
+		font-style: italic;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	.review-date{
+		font-family: 'Times New Roman', serif;
+		font-style: italic;
+		font-size: 15px;
+		margin-top: 2px;
+		opacity: .26;
+	}
+	.review-stars{
+		color: $yellow;
+		margin: 7px 0 15px;
+		font-size: 14px;
+		i{
+			margin: 0 3px;
+		}
+	}
+}
+@media only screen and (max-width: 768px){
+	.quotes{
+		display: none;
+	}
+}

@@ -1,0 +1,19 @@
+- var galleryHeader = 'лакшери агентство'
+- var galleryText1 = 'Nefco встречает своих посетелей современным дизайном и уютной атмосферой: огромное светлое пространство, изящная мебель, мягкие бархатные кресла. Это отличное место для того, чтобы посвятить пару часов только себе!'
+- var galleryText2 = 'Клиентам здась предложат экстроординарный ассортимент туристических направлений и качественный кол-сервис, а студнетов порадуют возможностью отправиться на коникулы.'
+
+section.gallery.inverse.section-overley(style='background-image: url(assets/img/bggalery.jpg)')
+	.container
+		.row
+			.col-md-5
+				h2.h2 #{galleryHeader}
+				p #{galleryText1}
+				p #{galleryText2}
+			.col-md-7
+				.section-gallery.fotorama(data-nav='thumbs' data-thumbwidth='115' dataheight='60' data-thumbborderwidth='5' data-thumbmargin='10' data-width='100%')
+					img(src='assets/img/gallery1.jpg')
+					img(src='assets/img/gallery2.jpg')
+					img(src='assets/img/gallery3.jpg')
+					img(src='assets/img/gallery4.jpg')
+					img(src='assets/img/gallery5.jpg')
+					img(src='assets/img/gallery6.jpg')

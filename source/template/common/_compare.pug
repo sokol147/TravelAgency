@@ -1,0 +1,54 @@
+- var item = ["One", "Two", "Three", "Four"]
+- var pageTitle = 'Сравнение товаров'
+-
+	var obj = {
+		val1: 'значение1',
+		val2: 'значение2',
+		val3: 'значение3'
+	}
+
+section.test-pug
+
+	each item, key in obj
+		.wrapper
+			.val= item
+
+
+section.compare-table
+	.container
+		h1.g-page-title= pageTitle
+		.compare-content
+			.compare-info
+				.compare-top
+				.compare-bottom
+					table.compare-table.compare-table--info
+						thead
+							tr
+								th Стоимость
+						tbody
+							tr
+								td Страна
+							tr
+								td Упаковка
+							tr
+								td Материал
+							tr
+								td Высота
+							tr
+								td Прадметов
+							tr
+								td Крушка
+							tr
+								td Объем
+							tr
+								td Ручки
+
+			.compare-products
+				.js-compare-products
+					include products/_product1
+					include products/_product1
+					include products/_product1
+					include products/_product1
+					include products/_product1
+					include products/_product1
+

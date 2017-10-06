@@ -1,5 +1,5 @@
 {
-  "name": "loftschool-builder",
+  "name": "basic-build",
   "devDependencies": {
     "browser-sync": "~2.18.7",
     "del": "~3.0.0",
@@ -23,7 +23,12 @@
     "vinyl-buffer": "^1.0.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "equal-height": "^1.1.0",
+    "fotorama": "^4.6.4",
+    "jquery": "~3.2.1",
     "normalize.css": "~7.0.0",
-    "jquery": "~3.2.1"
+    "owl.carousel": "^2.2.0",
+    "selectize": "^0.12.4"
   }
 }

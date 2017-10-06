@@ -1,0 +1,101 @@
+@import 'common/sprite';
+.partners{
+	position: relative;
+	background-size: 100%;
+	padding: 5% 0;
+	background-repeat: no-repeat;
+	.h2{
+		font-size: 22px;
+		font-weight: 800;
+		color: $yellow;
+	}
+}
+.section-overlay-white:before{
+	background-color: #fff;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .85;
+}
+.carousel-partners{
+	.partner-1{
+		@include sprite($partners1);
+		margin: auto;
+	}
+	.partner-2{
+		@include sprite($partners2);
+		margin:auto;
+	}
+	.partner-3{
+		@include sprite($partners3);
+		margin:auto;
+	}
+	.partner-4{
+		@include sprite($partners4);
+		margin:auto;
+	}
+	.partner-5{
+		@include sprite($partners5);
+		margin:auto;
+	}
+	.partner{
+		height: 100%;
+		display: flex;
+		margin: auto;
+	}
+	.owl-stage{
+		display: flex;
+		.owl-item{
+			margin-top: 30px;
+			img{
+				max-width: 100%;
+				width: auto;
+				display: inline-block;
+				margin: auto;
+			}
+		}
+	}
+	.owl-nav{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+		div{
+			position: absolute;
+			top: 55px;
+			color: #999;
+			font-size: 30px;
+			transition: all .5s;
+			padding: 0 15px;
+			&:hover{
+				opacity: .5;
+			}
+		}
+		.owl-prev{
+			left: -60px;
+		}
+		.owl-next{
+			right: -60px
+		}
+	}
+}
+@media only screen and (max-width: 768px){
+	.carousel-partners .owl-nav{
+		.owl-prev{
+			left: 10px;
+		}
+		.owl-next{
+			right: 10px;
+		}
+	}
+}
+@media only screen and (max-width: 480px){
+	.partners{
+		background-size: cover;
+	}
+}

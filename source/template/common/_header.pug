@@ -1,2 +1,56 @@
-header.header
-	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, quis.
+- var menu = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто', 'Круизы', 'Услуги', 'Визы']
+- var social = ['facebook', 'instagram','vk']
+- var phoneNumber = '+375 (29) 123-45-67'
+- var place = 'г. Минск, ул. Краснобеловая, 22 к 4'
+- var seoText = 'Nefco - это туристическое агентство безнес классаю Агенты салона дарят клиентам уверенность в себе и индивидуальные путевкию Здесь представленны все самые востребованные курорты в туристическом бизнесе.'
+- var workTime = 'Время работы: ежедневно: 10:00 - 22:00'
+- var headerButton = 'о агентстве'
+- var welcomeText = 'Добро пожаловать в лучшее'
+- var servicesType = 'тур агентство'
+- var local = 'в минске'
+
+header.header(style='background-image: url(assets/img/bgbig.jpg)')
+	.header-top-line
+		a.logo(href='#')
+			img.logo-img(src='assets/img/logo.png' alt='logo')
+		.phone.hidden-xs
+			i.fa.fa-mobile.phone-icon
+			p.phone-number #{phoneNumber}
+		a.menu-link(href='#')
+			span
+	.menu
+		ul.menu-list
+			each item in menu
+				li.menu-list-item
+					a.menu-list-item--link(href='#')= item
+	.header-info
+		.main-info
+			.container
+				.row
+					.col-sm-7.col-xs-10
+						.main-info-composition
+							.welcome
+								p.welcome-text
+									span #{welcomeText}
+								h1.h1.welcome-text-h1 #{servicesType}
+								i.fa.fa-star.left-star
+								strong.city #{local}
+								i.fa.fa-star.right-star
+							p.big-descr #{seoText}
+							a.btn.btn-main(href='#') #{headerButton}
+	.header-social
+		+social('header-social-list', ['facebook', 'instagram', 'vk', 'twitter'])
+	.header-address
+		.container
+			.row
+				.col-md-4.col-sm-6
+					i.fa.fa-location-arrow
+					p #{place}
+				.col-md-4.col-sm-6.col-md-4-phone
+					i.fa.fa-mobile
+					p.header-phone #{phoneNumber}
+				.col-md-4.hidden-sm.hidden-xs.col-md-4-time
+					i.fa.fa-clock-o
+					p #{workTime}
+
+

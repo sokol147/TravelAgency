@@ -1,0 +1,33 @@
+- var reviewHeader = 'отзывы наших клиентов'
+-
+	var reviews = [
+		{
+			reviewName: 'Оксана',
+			reviewDate: '29.07.2017 (Горячий тур)',
+			reviewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, neque. Incidunt obcaecati fugit sint ea, impedit veniam ipsa libero numquam reiciendis a quidem, sit error, suscipit nam. Aliquam doloremque, fuga, exercitationem similique atque ullam. Earum aliquam deleniti repellendus rem inventore ipsam. Perferendis atque voluptatem eos magnam dicta illo, quia mollitia.'
+		},{
+			reviewName: 'Аня',
+			reviewDate: '29.07.2017 (Горяий тур)',
+			reviewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, neque. Incidunt obcaecati fugit sint ea, impedit veniam ipsa libero numquam reiciendis a quidem, sit error, suscipit nam. Aliquam doloremque, fuga, exercitationem similique atque ullam.'
+		}
+	]
+
+section.review.inverse.section-overlay(style='background-image: url(/assets/img/bgreview.jpg)')
+	.container
+		.row
+			.col-sm-12
+				h2.h2.text-center #{rewiewHeader}
+			.col-sm-8.col-sm-offset-2
+				.quotes
+				.owl-carousel.carousel-reviews
+					each item in reviews
+						.carousel-reviews-item
+							p.review-header #{item.reviewName}
+							.review-date #{item.reviewDate}
+							.review-stars
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star
+								i.fa.fa-star
+							p.review-text #{item.reviewText}

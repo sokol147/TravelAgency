@@ -1,0 +1,26 @@
+- var options = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто', 'Круизы', 'Услуги', 'Визы']
+- var formButton = 'отправить'
+- var thxApplication = 'Спасибо за заявку!'
+- var callbackHeader = 'оставить заявку'
+- var callbackText = 'Оставьте заявку и мы вам перезвоним в течении 15 минут.'
+
+section.call-back(style='background-image: url(assets/img/bgcall-back.jpg)')
+	.container
+		.row
+			.col-sm-6.col-sm-offset-6.col-md-5.col-md-offset-7
+				form.call-back--form
+					.call-back-success
+						span #{thxApplication}
+					input(type='hidden' name='nefco' value='nefco')
+					input(type='hidden' name='admin_email' value='1470715@yandex.ru')
+					input(type='hidden' name='form_subject' value='Заявка с сайта тур агенства')
+					.call-back-logo
+						img(src='assets/img/logo.png')
+					p.call-back-header #{callbackHeader}
+					p.call-back-left #{callbackText}
+					input(type='text' name='Name' placeholder='Ваше имя...' required)
+					input(type='text' name='Phone number' placeholder='Ваш телефон...' required)
+					select.call-back-select(name='услуга')
+						each item in options
+							option=item
+					a.btn.btn-call-back #{formButton}

@@ -1,9 +1,14 @@
 extends ../_template
+include ../component/_mixins
 
 block variables
   - var title = 'Home page'
 
 block content
   include ../common/_header
-  include ../common/_greating
-  
+  include ../common/_main-carousel
+  include ../common/_gallery
+  include ../common/_call-back
+  include ../common/_review
+  include ../common/_partners
+  include ../common/_footer

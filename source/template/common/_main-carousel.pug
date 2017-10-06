@@ -1,0 +1,58 @@
+-
+	var tours = [
+		{
+			toursName: 'горячие туры',
+			country1: 'Испания -',
+			price1: 8500,
+			country2: 'Италия -',
+			price2: 8500,
+			country3: 'Греция -',
+			price3: 8500,
+			toursBg: 'hottur'
+		},{
+			toursName: 'средние туры',
+			country1: 'Литва -',
+			price1: 8500,
+			country2: 'Германия -',
+			price2: 8500,
+			country3: 'Австрия -',
+			price3: 8500,
+			toursBg: 'middletur'
+		},{
+			toursName: 'холодные туры',
+			country1: 'Эстония -',
+			price1: 8500,
+			country2: 'Норвегия -',
+			price2: 8500,
+			country3: 'Финляндия -',
+			price3: 8500,
+			toursBg: 'coldtur'
+		},{
+			toursName: 'Так сяк туры',
+			country1: 'Эстония -',
+			price1: 8500,
+			country2: 'Норвегия -',
+			price2: 8500,
+			country3: 'Финляндия -',
+			price3: 8500,
+			toursBg: 'coldtur'
+		}
+	]
+
+section.services
+	.owl-carousel.services-carousel-new
+		each item in tours
+			.services-carousel-new-item
+				.services-carousel-new-content
+					.carousel-logo
+						img(src='assets/img/logo.png')
+					h3.h3= item.toursName
+					ul.services-carousel-new-list
+						li.serbices-carousel-list-item= item.country1
+							strong= item.price1
+						li.serbices-carousel-list-item= item.country2
+							strong= item.price2
+						li.serbices-carousel-list-item= item.country3
+							strong= item.price3
+					a.btn.btn-carousel(href='#') все услуги
+				img.services-carousel-new-image(src=`assets/img/${item.toursBg}.jpg`)

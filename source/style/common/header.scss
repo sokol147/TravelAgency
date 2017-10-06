@@ -1,0 +1,276 @@
+.header{
+	min-height: 700px;
+	height: 100vh;
+	background-color: #b27884;
+	position: relative;
+	color: #fff;
+	background-size: cover;
+	background-position: center;
+	&-top-line{
+		padding-top: 35px;
+		width: 100%;
+		z-index: 1;
+	}
+}
+.logo-img{
+	width: 115px;
+	height: auto;
+	margin-left: 45px;
+}
+.phone{
+	display: flex;
+	position: absolute;
+	right: 75px;
+	top: 50px;
+	&-icon{
+		margin: 8px 6px 0 0;
+		font-size: 22px;
+	}
+	&-number{
+		margin: 0px;
+		font-size: 22px;
+		font-family: 'Fira Sans', sans-serif;
+		white-space: nowrap;
+	}
+}
+.menu-link{
+	position: absolute;
+	right: 0;
+	top: 44px;
+	display: block;
+	height: 50px;
+	width: 50px;
+	z-index: 10;
+	span, span:before, span:after{
+		display: block;
+		height: 2px;
+		width: 26px;
+		background-color: #000;
+		position: absolute;
+		left: 50%;
+		margin-left: -13px;
+		top: 50%;
+		margin-top: -1px;
+		border-radius: 5px;
+	}
+	span:before{
+		content:'';
+		transition: all 0.2s;
+		margin-top: -6px;
+	}
+	span:after{
+		content: '';
+		transition: all 0.2s;
+		margin-top: 4px;
+	}
+	&-active span{
+		background-color: transparent;
+		&:before{
+			transform: rotate(45deg);
+			margin-top: 0;
+		}
+		&:after{
+			transform: rotate(-45deg);
+			margin-top: 0;
+		}
+	}
+}
+.menu{
+	background-color:rgba(178,120,132,.8);
+	transition: all 0.4s;
+	position: fixed;
+	top: 0;
+	right: -100vw;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	&-list{
+		list-style-type: none;
+		padding: 0;
+		text-align: center;
+		width: 100vw;
+		&-item{
+			width: 100%;
+			&--link{
+				color:#000;
+				line-height: 2.5;
+				letter-spacing: 4px;
+				text-decoration: none;
+				transition: all 0.2s;
+				display: block;
+				width: 100%;
+				&:hover{
+					text-decoration: none;
+					background-color: rgba(0,0,0,.5);
+					color: #fff;
+				}
+			}
+		}
+	}
+	&-active{
+		right: 0;
+	}
+}
+.header-info{
+	display: flex;
+	position: relative;
+	height: 80%;
+	top: 0;
+	.main-info{
+		margin: auto;
+	}
+}
+.main-info-composition{
+	text-align: center;
+	position: relative;
+	.welcome{
+		text-transform: uppercase;
+		&-text{
+			font-size: 14px;
+			white-space: nowrap;
+			display: flex;
+			align-items: center;
+			margin: 0;
+			margin-bottom: -10px;
+			&:before, &:after{
+					content: '';
+					height: 1px;
+					width: 100%;
+					position: relative;
+					background-color: #fff;
+					display: inline-block;
+				}
+			span{
+				margin: 0 10px;
+				
+			}
+			&-h1{
+				font-size: 67px;
+				font-weight: 100;
+				line-height: 1.4;
+				margin: 0 0 15px 0;
+				white-space: nowrap;
+				border-bottom: 1px solid #fff;
+			}
+		}
+		.fa-star{
+			color:#555;
+			margin: 0 10px;
+			font-size: 12px;
+			margin-top: -1px;
+		}
+	}
+}
+.city{
+	font-size: 17px;
+}
+.big-descr{
+	margin: 30px 0;
+}
+.header-social{
+	position: absolute;
+	display: flex;
+	right: 0;
+	top: 0;
+	height: 100%;
+	margin: auto;
+	border-left: 1px solid rgba(255,255,255,.1);
+}
+.header-social-list{
+	margin: auto;
+	padding: 0 5px;
+	list-style-type: none;
+	&-item{
+		&-link{
+			color: #2c2c2c;
+			font-size: 17px;
+			display: block;
+			background-color: rgba(0,0,0,.2);
+			height: 38px;
+			width: 38px;
+			text-align: center;
+			margin: 18px 0;
+			line-height: 38px;
+			border-radius: 50%;
+			transition: background-color .25s ease;
+			&:hover{
+				background-color: rgba(0,0,0,.4);
+				color:#2c2c2c;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.header-address{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-top: 1px solid rgba(255,255,255,.15);
+	padding: 5px 0;
+	background-color: rgba(21,21,21,.4);
+	.col-md-4{
+		display: flex;
+		.fa{
+			margin-right: 5px;
+			margin-top: 5px;
+			color: #555;
+			font-size: 18px;
+		}
+	}
+	.col-md-4-phone{
+		justify-content: center;
+	}
+	.col-md-4-time{
+		justify-content: flex-end;
+	}
+	p{
+		margin: 0;
+	}
+}
+.header-phone{
+	font-family: 'Fira sans', sans-serif;
+}
+@media only screen and (max-width: 1200px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 60px;
+	}
+	.header-address{
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 992px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 46px;
+	}
+}
+@media only screen and (max-width: 768px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 46px;
+	}
+	.header-address .col-md-4-phone{
+		justify-content: flex-start;
+	}
+	.header-info .btn-main{
+		padding: 12px 36px;
+	}
+}
+@media only screen and (max-width: 480px){
+	.main-info-composition .welcome-text-h1{
+		font-size: 28px;
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	.main-info-composition .welcome-text span{
+		font-size: 10px;
+	}
+	.header-info .city{
+		font-size: 14px;
+	}
+	.header-info .big-descr{
+		font-size: 14px;
+	}
+}

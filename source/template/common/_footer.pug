@@ -1,0 +1,34 @@
+- var social = ['facebook', 'instagram','vk']
+- var menu = ['Туристический сервис', 'Санаторный сервис', 'Не санаторный сервис', 'Горящие', 'Авио', 'Авто']
+- var footerHeader = 'Лакшери туристическое агентство Минска'
+- var footerAddress = 'г. Минск, ул. Краснобеловая, 22 к 4 ст.м Академия наук'
+- var workTime = 'Время работы: ежедневно: 10:00 - 22:00'
+- var phoneNumber = '+375 (29) 123-45-67'
+
+footer.footer
+	.container
+		.row
+			.col-lg-2.col-xs-12.col-sm-4
+				.footer-column.footer-column-social
+					img.footer-logo(src='assets/img/logo.png')
+					p.footer-descr #{footerHeader}
+					.footer-social
+						+social('header-social-list', ['facebook', 'instagram', 'vk'])
+			.col-lg-3.col-xs-12.col-sm-4
+				.footer-column
+					nav.footer-menu
+						ul.footer-menu-list
+							each item in menu
+								li.footer-menu-list-item
+									a(hfer='#').footer-menu-list-item--link=item
+			.col-lg-3.col-xs-12.col-sm-4
+				.footer-column.footer-column-address
+					p.footer-addres #{footerAddress}
+					p.footer-time #{workTime}
+					p.footer-phone #{phoneNumber}
+			.col-lg-4.col-xs-12.col-sm-12
+				.footer-column
+					.footer-map
+						script(type='text/javascript' charset='utf-8' async src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae25142bcda1a56468ab0c0aec802e1b139924b014fefad747f37bd01a89b9a0c&amp;width=100%&amp;height=190&amp;lang=ru_RU&amp;scroll=true')
+	.scroll-top(title='На верх')
+		i.fa.fa-angle-double-up
